@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+  <PreferenceCategory
+      android:title="Параметры записи">
+    <CheckBoxPreference
+      android:key="PREF_RECORD_CALLS"
+      android:title="Записывать разговоры"
+      android:summary="Включение автоматической записи разговоров"
+      android:defaultValue="true"
+    />
+    <ListPreference
+     android:key="PREF_AUDIO_SOURCE"
+     android:title="Источник аудио"
+     android:summary="Выбор системного устройства или потока"
+     android:entries="@array/audio_source_options"
+     android:entryValues="@array/audio_source_values"
+     android:dialogTitle="Audio source"
+     android:defaultValue="4"
+    />
+  </PreferenceCategory>
+  <PreferenceCategory
+      android:title="Параметры хранения">
+    <CheckBoxPreference
+        android:key="PREF_SAVE_RECORDS"
+        android:title="Выгружать записи"
+        android:summary="Включение автоматической выгрузки записей на сервер хранения"
+        android:defaultValue="true"
+        />
+    <CheckBoxPreference
+        android:key="PREF_SEND_META"
+        android:title="Выгружать метаданные"
+        android:summary="Включение выгрузки данных записи на сервер хранения"
+        android:defaultValue="true"
+        />
+    <EditTextPreference
+        android:key="PREF_SERVER_IP"
+        android:title="Адрес сервера"
+        android:summary="Ввод ip-адреса сервера выгрузки"
+        android:defaultValue="10.34.200.118" />
+    <EditTextPreference
+        android:key="PREF_SERVER_TYPE"
+        android:title="Тип сервера"
+        android:summary="Ну или что-нибудь ещё"
+        android:defaultValue="***" />
+  </PreferenceCategory>
+  <PreferenceCategory
+      android:title="Параметры логирования">
+  <CheckBoxPreference
+      android:key="PREF_LOG_DB"
+      android:title="Писать в базу"
+      android:summary="Включение записи лога в локальную БД"
+      android:defaultValue="false"
+      />
+    <CheckBoxPreference
+        android:key="PREF_LOG_FILE"
+        android:title="Писать в файл"
+        android:summary="Включение записи лога в локальный .log файл"
+        android:defaultValue="true"
+        />
+    <ListPreference
+        android:key="PREF_LOG_SHOW_LEVEL"
+        android:title="Уровень отображения"
+        android:summary="Выбор уровня отображения логов в приложении"
+        android:entries="@array/log_level_options"
+        android:entryValues="@array/log_level_values"
+        android:dialogTitle="Log level"
+        android:defaultValue="4"
+        />
+  </PreferenceCategory>
+</PreferenceScreen>
